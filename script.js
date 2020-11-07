@@ -42,12 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (a === b && b === c) {
           roundWon = true;
-          console.log('won');
+          
           break;
       }
       
     }
     if (roundWon) {
+      if (currentPlayer === 'player X') { 
+currentPlayer = 'player O';
+      } else {
+        currentPlayer = 'player X';
+      }
         playerDisplay.innerHTML = winningMessage();
         gameActive = false;
         return;
@@ -59,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         gameActive = false;
         return;
     }
-    handlePlayerChange();
+    // handlePlayerChange();
   };
   const clickOutCome = (e) => {
     const squareArray = Array.from(squares);
